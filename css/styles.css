@@ -122,6 +122,11 @@ a {
     transition: .2s
 }
 
+.contact-wrapper{
+    width: 84%;
+    margin: auto;
+}
+
 .header-cta {
     padding: 12px 19px;
     font-size: 13px
@@ -384,16 +389,15 @@ h2 em {
     width: min(var(--max), calc(100% - 48px));
     margin: auto;
     border-top: 1px solid var(--line);
-    border-bottom: 1px solid gainsboro;
     min-height: 86px;
     display: grid;
-    grid-template-columns: 55px 180px 1fr;
+    grid-template-columns: 160px 180px 1fr;
     align-items: center;
     gap: 25px;
-    padding: 15px;
+    padding: 60px 0px 15px 0px;
 }
 
-.intro-strip span,
+/* .intro-strip span,
 .intro-strip p {
     color: #8b94a3;
     font-size: 11px;
@@ -403,7 +407,7 @@ h2 em {
 .intro-strip p {
     margin: 0;
     font-weight: 700
-}
+} */
 
 .intro-strip strong {
     font-size: 14px;
@@ -413,7 +417,8 @@ h2 em {
 .work-section {
     width: min(var(--max), calc(100% - 48px));
     margin: auto;
-    padding: 60px 0
+    padding: 0px 0px 60px 0px;
+    border-bottom: 1px solid gainsboro;
 }
 
 .section-heading {
@@ -516,7 +521,7 @@ h2 em {
 .capabilities {
     width: min(var(--max), calc(100% - 48px));
     margin: auto;
-    padding: 20px 0 60px;
+    padding: 60px 0 60px;
     display: grid;
     grid-template-columns: .8fr 1.2fr;
     gap: 70px
@@ -563,7 +568,7 @@ h2 em {
     width: min(var(--max), calc(100% - 48px));
     margin: auto;
     border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid gainsboro;
     min-height: 100px;
     display: flex;
     justify-content: space-between;
@@ -609,7 +614,8 @@ h2 em {
     font-size: 11px;
     letter-spacing: .15em;
     align-self: start;
-    padding-top: 8px
+    padding: 60px 15px 0px 15px;
+    width: 200px;
 }
 
 .contact h2 {
@@ -946,7 +952,7 @@ footer a {
     }
 
     .intro-strip {
-        grid-template-columns: 40px 1fr
+        grid-template-columns: 150px 1fr
     }
 
     .intro-strip strong {
@@ -990,6 +996,20 @@ footer a {
     footer {
         width: min(100% - 30px, var(--max))
     }
+
+    .work-section {
+    padding: 0px 0px 30px 0px;
+
+}
+
+.contact-wrapper {
+    width: 100%;
+}
+
+
+.capabilities{
+        padding: 60px 0 30px;
+}
 
     .hero {
         min-height: 0;
@@ -1047,7 +1067,7 @@ footer a {
         border-left: 0
     }
 
-    .contact {
+   .contact {
         padding: 40px 0
     }
 
