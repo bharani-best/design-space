@@ -257,6 +257,7 @@ h2 em {
 .hero-banner img{
     position: relative;
     left: 0px;
+    max-width: 100%;
  }
 
 .hero-visual:hover .hero-banner {
@@ -388,7 +389,8 @@ h2 em {
     display: grid;
     grid-template-columns: 55px 180px 1fr;
     align-items: center;
-    gap: 25px
+    gap: 25px;
+    padding: 15px;
 }
 
 .intro-strip span,
@@ -411,7 +413,7 @@ h2 em {
 .work-section {
     width: min(var(--max), calc(100% - 48px));
     margin: auto;
-    padding: 120px 0
+    padding: 60px 0
 }
 
 .section-heading {
@@ -514,7 +516,7 @@ h2 em {
 .capabilities {
     width: min(var(--max), calc(100% - 48px));
     margin: auto;
-    padding: 20px 0 120px;
+    padding: 20px 0 60px;
     display: grid;
     grid-template-columns: .8fr 1.2fr;
     gap: 70px
@@ -595,7 +597,7 @@ h2 em {
 .contact {
     width: min(var(--max), calc(100% - 48px));
     margin: auto;
-    padding: 135px 0 145px;
+    padding: 60px 0 145px;
     display: grid;
     grid-template-columns: 60px minmax(300px, .78fr) minmax(420px, 1.22fr);
     align-items: center;
@@ -761,7 +763,8 @@ footer a {
     position: fixed;
     inset: 0;
     z-index: 50;
-    display: none
+    display: none;
+    
 }
 
 .modal.open {
@@ -779,18 +782,44 @@ footer a {
     position: relative;
     width: min(1000px, calc(100% - 30px));
     max-height: 92vh;
-    overflow: auto;
+    overflow: hidden;
     margin: 4vh auto;
     background: var(--paper);
     border-radius: 25px;
-    box-shadow: 0 30px 80px rgba(0, 0, 0, .25)
+    box-shadow: 0 30px 80px rgba(0, 0, 0, .25);
+}
+
+.modal-scroll {
+    max-height: 81.5vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transform: translate(-5px, 18px);
+}
+
+.modal-scroll::-webkit-scrollbar-button {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+.modal-scroll::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.modal-scroll::-webkit-scrollbar-thumb {
+    background: #c7cbd3;
+    border-radius: 10px;
 }
 
 .modal-close {
     position: absolute;
     z-index: 4;
-    top: 15px;
-    right: 15px;
+    top: 5px;
+    right: 5px;
     width: 38px;
     height: 38px;
     border: 0;
@@ -811,7 +840,7 @@ footer a {
 }
 
 .modal-info {
-    padding: 35px;
+    padding: 15px 35px 35px 35px;
     border-top: 1px solid var(--line)
 }
 
@@ -835,6 +864,54 @@ footer a {
 .modal-contact {
     margin-top: 10px
 }
+
+
+
+/* Pagination starts */
+
+.pagination{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  margin:42px 0 0;
+  min-height:42px;
+}
+.pagination button{
+  width:42px;
+  height:42px;
+  border:1px solid #e3e7ed;
+  border-radius:12px;
+  background:rgba(255,255,255,.82);
+  color:#68738a;
+  display:grid;
+  place-items:center;
+  font:600 12px "DM Sans",sans-serif;
+  box-shadow:0 6px 18px rgba(27,38,61,.05);
+  transition:transform .2s, box-shadow .2s, background .2s, color .2s, border-color .2s;
+}
+.pagination button:hover:not(:disabled){
+  transform:translateY(-2px);
+  box-shadow:0 10px 24px rgba(27,38,61,.09);
+  color:var(--ink);
+}
+.pagination-page.active{
+  color:#17233b;
+  border-color:transparent;
+  background:linear-gradient(135deg, #8ccff2, #c7b3ed, #efb9d7);
+  box-shadow:0 8px 22px rgba(27,38,61,.10)
+}
+.pagination-arrow{
+  font-size:17px !important;
+  line-height:1;
+}
+.pagination button:disabled{
+  opacity:.38;
+  cursor:not-allowed;
+  box-shadow:none;
+}
+
+/* Pagination ends */
 
 @media(max-width:900px) {
     .desktop-nav {
@@ -889,14 +966,15 @@ footer a {
     }
 
     .contact {
-        grid-template-columns: 45px 1fr
+        grid-template-columns: 25px 1fr
     }
 
     .contact-form {
         grid-column: 2;
         margin-top: 15px;
         width: 100%;
-        max-width: 620px
+        max-width: 620px;
+        margin-left: -30px;
     }
 }
 
@@ -970,7 +1048,7 @@ footer a {
     }
 
     .contact {
-        padding: 95px 0
+        padding: 40px 0
     }
 
     .contact h2 {
@@ -991,8 +1069,11 @@ footer a {
     }
 
     footer {
-        flex-direction: column
+        /* flex-direction: column */
     }
+
+.pagination{gap:7px;margin-top:32px}
+  .pagination button{width:38px;height:38px;border-radius:11px}
 
     .modal-dialog {
         margin: 2vh auto;
